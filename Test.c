@@ -2,15 +2,18 @@
 
 int main(){
 
+int i;
 int a ;
 
 printf("Hello World !\n");
 printf("Enter First number:");
 scanf("%d", &a);
-printf("You entered:%d", a);
 
+printf("The table of %d is:\n", a);
 
-
+for(i=1;i<=10;i++){
+    printf("%d X %d = %d\n", a, i, a*i);
+}
 
 
 
