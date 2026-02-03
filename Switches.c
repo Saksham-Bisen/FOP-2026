@@ -28,7 +28,10 @@ case(3):
     printf("The Multiplication of two numbers is :%.2f", num1*num2);
 break;
 case(4):
-    printf("The Result after Division of two numbers is :%.2f", num1/num2);
+    if(num2==0){
+        printf("Cannot divide by zero");
+    }
+    else{printf("The Result after Division of two numbers is :%.2f", num1/num2);}
 break;
 default:
     printf("Invalid number entered");
