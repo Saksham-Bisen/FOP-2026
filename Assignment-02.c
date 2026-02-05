@@ -1,5 +1,6 @@
 // Creating a menu driven program for Arithemetic Operations
 #include <stdio.h>
+#include <math.h>
 
 int main(){
 
@@ -33,10 +34,25 @@ case(4):
     else{printf("The Result after Division of two numbers is :%.2f", num1/num2);}
 break;
 case(5):
-    printf("The Square of two numbers are :%.2f", num1*num2);
+    printf("The Square of two numbers are :%d, %d", pow(num1,2), pow(num2,2));
 break;
 case(6):
-    printf("The Multiplication of two numbers is :%.2f", num1*num2);
+    printf("The Factorial of two numbers is :%.2f", num1*num2);
+    int fac1=1;
+    int fac2=1;
+    int count1 = num1;
+    int count2 = num2;
+
+    while(count1>=1){
+        fac1 = fac1*count1;
+        count1--;
+    }
+
+    while(count2>=1){
+        fac2 = fac2*count2;
+        count2--;
+    }
+printf("the factorial of %d is %d\nthe factorial of %d is %d", num1, fac1, num2, fac2);
 break;
 default:
     printf("Invalid number entered");
