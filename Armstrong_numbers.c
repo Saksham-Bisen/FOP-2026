@@ -1,26 +1,24 @@
 #include <stdio.h>
-#include <math.h>
 
 int main(){
-
 
 int num;
 int sum = 0;
 int copy;
 
-printf("Enter a number:");
+printf("Enter a three digit number:");
 scanf("%d", &num);
 
 copy = num;
 
 while(copy!=0){
-    sum = sum + pow((copy%10),3);
+    sum = sum + ((copy%10)*(copy%10)*(copy%10));
     copy = copy/10;
 }
 
-printf("The sum of digits is:%d", sum);
+printf("The sum of digits is:%d\n", sum);
 if(sum==num){
-printf("As the sum of digits is equal to the number hence %d is an armstrong number", num);
+printf("As the sum of cube of digits is equal to the number hence %d is an armstrong number", num);
 }
 
 else{
