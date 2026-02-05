@@ -1,6 +1,5 @@
 // Creating a menu driven program for Arithemetic Operations
 #include <stdio.h>
-#include <math.h>
 
 int main(){
 
@@ -21,21 +20,26 @@ switch (choice)
 case(1):
     printf("The addition of two numbers is :%.2f", num1+num2);
 break;
+
 case(2):
     printf("The difference of two numbers is :%.2f", num1-num2);
 break;
+
 case(3):
     printf("The Multiplication of two numbers is :%.2f", num1*num2);
 break;
+
 case(4):
     if(num2==0){
         printf("Cannot divide by zero");
     }
     else{printf("The Result after Division of two numbers is :%.2f", num1/num2);}
 break;
+
 case(5):
     printf("The Square of two numbers are :%.2f, %.2f", num1*num1, num2*num2);
 break;
+
 case(6):
 
     float fac1=1;
@@ -59,10 +63,11 @@ case(6):
         fac2=0;
 printf("the factorial of %f is %.2f\nthe factorial of %f is %.2f", num1, fac1, num2, fac2);
 break;
+
 default:
     printf("Invalid number entered");
 break;
-}
 
+}
     return 0;
 }
