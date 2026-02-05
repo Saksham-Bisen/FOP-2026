@@ -20,11 +20,11 @@ while(copy!=0){
 
 printf("The sum of digits is:%d", sum);
 if(sum==num){
-printf("As the sum of digits is equal to the number hence %d is an armstrong number");
+printf("As the sum of digits is equal to the number hence %d is an armstrong number", num);
 }
 
 else{
-    printf("As the sum of digits is not equal to the number hence %d is not an armstrong number");
+    printf("As the sum of digits is not equal to the number hence %d is not an armstrong number", num);
 }
     return 0;
 }
