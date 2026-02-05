@@ -58,10 +58,10 @@ case(6):
     }
 
     if(num1 == 0)
-        fac1=0;
+        fac1=1;
     if(num2==0)
-        fac2=0;
-printf("the factorial of %f is %.2f\nthe factorial of %f is %.2f", num1, fac1, num2, fac2);
+        fac2=1;
+printf("the factorial of %.2f is %.2f\nthe factorial of %.2f is %.2f", num1, fac1, num2, fac2);
 break;
 
 default:
