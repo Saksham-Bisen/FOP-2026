@@ -8,7 +8,7 @@ int copy;
 int counter;
 int pwr = 0;
 
-printf("Enter a three digit number:");
+printf("Enter a number:");
 scanf("%d", &num);
 
 counter = num;
