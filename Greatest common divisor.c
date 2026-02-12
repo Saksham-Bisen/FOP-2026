@@ -18,6 +18,7 @@ for(old_div;old_div<num1 && old_div<num2;old_div++){
     if(num1%old_div==0 && num2%old_div==0){
         new_div = old_div;
     }
+    
 }
 printf("The GCD of numbers is %d", new_div);
     return 0;

@@ -19,6 +19,9 @@ for(old_div;old_div<num1 && old_div<num2;old_div++){
         new_div = old_div;
         break;
     }
+    else{
+        printf("No common Divisor");
+    }
 }
 printf("The SCD of numbers is %d", new_div);
     return 0;
