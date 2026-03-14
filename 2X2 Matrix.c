@@ -19,7 +19,7 @@ printf("Printing the elements of the matrix\n");
 
 for(row=0;row<=1;row++){
     for(col=0;col<=1;){
-        printf("%d\t", mat[row][col]);
+        printf("|%d|", mat[row][col]);
         col++;}
     printf("\n");
 }
