@@ -25,7 +25,7 @@ printf("Enter marks in fifth course:");
 scanf("%d", &m5);
 
 
-if(m1>40&&m2>40&&m1>40&&m4>40&&m5>40){
+if(m1>40 && m2>40 && m1>40 && m4>40 && m5>40){
     printf("Result = PASS");
 }
 else{
@@ -35,18 +35,18 @@ else{
 
 prc = (m1+m2+m3+m4+m5)*100/500;
 
-printf("%d", prc);
+printf("\n%d\n", prc);
 
 if(prc>=75)
 printf("Grade = DISTINGUISHED");
 
-else if(75>prc>=60)
+else if(prc>=60)
 printf("Grade = FIRST DIVISION");
 
-else if(60>prc>=50)
+else if(prc>=50)
 printf("Grade = SECOND DIVISION");
 
-else if(50>prc>=40)
+else if(prc>=40)
 printf("Grade = THIRD DIVISION");
 
 
