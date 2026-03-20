@@ -11,7 +11,8 @@ printf("Enter a Binary Number:");
 scanf("%d", &num);
 
 for(num;num > 0;num/=10){
-sum += (num%10)*pow(2,num);
+sum += (num%10)*pow(2,pwr);
+pwr++
 }
 
 printf("The number in decimal is:%d", sum);
