@@ -35,7 +35,7 @@ else{
 
 prc = (m1+m2+m3+m4+m5)*100/500;
 
-printf("\n%d\n", prc);
+printf("\nPercentage = %d\n", prc);
 
 if(prc>=75)
 printf("Grade = DISTINGUISHED");
