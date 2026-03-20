@@ -27,10 +27,10 @@ case 3:
     printf("The Multiplication of both numbers is :%d", num1 * num2);
     break;
 case 4:
-    printf("The division of both numbers is :%.2f", num1 / num2);
+    printf("The division of both numbers is : %d", num1 / num2);
     break;
 case 5:
-    printf("First number raised to the power of second number is :%d", pow(num1, num2));
+    printf("First number raised to the power of second number is :%.2lf", pow(num1, num2));
     break;
 case 6:
 
