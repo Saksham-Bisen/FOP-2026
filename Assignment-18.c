@@ -34,7 +34,7 @@ pal_cnt = lngt - 1;
 while(pal_cnt>=0){
     if(string[i] == string[pal_cnt]){
         pal = true;
-        i--;
+        i++;
         pal_cnt--;
     }
     else{pal = false;break;}}
@@ -43,9 +43,6 @@ while(pal_cnt>=0){
 if(pal){
     printf("\nThe string is a palindrome");}
 else{printf("\nThe string is not a palindrome");}
-
-
-
 
     return 0;
 }
