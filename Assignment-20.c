@@ -13,7 +13,7 @@ int temp;
 temp = a;
 a = b;
 b = temp;
-printf("X=%d\tY=%d", a, b);
+printf("X=%d\tY=%d", *a, *b);
 }
 
 
@@ -34,7 +34,7 @@ printf("Without pointer:");
 swap(num1, num2);
 printf("\n");
 printf("With pointer:");
-swap_ptr(num1, num2);
+swap_ptr(&num1, &num2);
 
 
 
