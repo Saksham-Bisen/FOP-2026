@@ -36,12 +36,5 @@ printf("\n");
 printf("With pointer:");
 swap_ptr(&num1, &num2);
 
-
-
-
-
-
-
-
     return 0;
 }
