@@ -24,7 +24,11 @@ int num = 0;
 printf("Enter a number:");
 scanf("%d", &num);
 
+if(num>=0){
 printf("factorial using recursion:%d", fac_rec(num));
 printf("\nfactorial without using recursion:%d", fac(num));
+}
+else
+printf("Invalid Number Entered");
     return 0;
 }
