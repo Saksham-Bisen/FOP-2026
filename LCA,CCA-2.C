@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 int fac_rec(int a){
     if(a==0)
     return 1;
@@ -15,8 +14,6 @@ int fac(int b){
     }
 return (fact);
 }
-
-
 
 int main(){
 
