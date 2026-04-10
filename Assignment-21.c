@@ -12,7 +12,7 @@ if(source == NULL){
     exit(1);
 }
 
-dest = fopen("dest.txt", "r");
+dest = fopen("dest.txt", "w");
 if(dest == NULL){
     printf("File Not Found");
     exit(1);
