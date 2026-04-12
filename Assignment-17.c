@@ -19,18 +19,16 @@ printf("Enter Number of terms:");
 scanf("%d", &num_trm);
 
 
-int neg = -1;
+int lp = 1;
 int pwr = 0;
-int term_pwr = 1;
 float sum = 0;
 
-while(num_trm>0){
-sum += (deg*pow(neg,pwr)*pow(deg,term_pwr)/fact(term_pwr));
+while(lp <= num_trm){
+sum += ( deg*pow(-1,pwr) * pow(deg,((2*lp) - 1)) / fact(((2*lp) - 1)) );
 /*printf("%d\n", term_pwr);
 printf("%d\n" ,fact(term_pwr));*/
 pwr++;
-term_pwr += 2;
-num_trm--;
+lp++;
 }
 
 printf("The Sum of Sine Series is:%f", sum);
