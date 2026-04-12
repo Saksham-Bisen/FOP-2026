@@ -20,14 +20,14 @@ scanf("%d", &num_trm);
 
 
 int lp = 1;
-int pwr = 0;
+int i = 0;
 float sum = 0;
 
 while(lp <= num_trm){
-sum += ( deg*pow(-1,pwr) * pow(deg,((2*lp) - 1)) / fact(((2*lp) - 1)) );
+sum += ( deg*pow(-1,i) * pow(deg,((2*lp) - 1)) / fact(((2*lp) - 1)) );
 /*printf("%d\n", term_pwr);
 printf("%d\n" ,fact(term_pwr));*/
-pwr++;
+i++;
 lp++;
 }
 
