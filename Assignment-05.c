@@ -1,126 +1,108 @@
 #include <stdio.h>
 
+int main() {
+    int n_row, n_col;
 
-int main(){
+    printf("Enter the number of rows (use 3 for Inverse/Magic Square): ");
+    scanf("%d", &n_row);
+    printf("Enter the number of columns: ");
+    scanf("%d", &n_col);
 
+    int mat1[10][10], mat2[10][10]; 
 
-int n_row;
-int n_col;
-
-printf("Enter the number of rows of the matrix:");
-scanf("%d", &n_row);
-
-printf("Enter the number of coloumns of the matrix:");
-scanf("%d", &n_col);
-
-int mat1[n_row][n_col];
-int mat2[n_row][n_col];
-
-int R1 = 0;
-printf("Enter Matrix-1 elements row-wise:");
-while(R1<n_row){
-    int C1 = 0;
-    while(C1<n_col){
-        scanf("%d", &mat1[R1][C1]);
-        C1++;
-    }
-R1++;
-}
-
-printf("Enter Matrix-2 elements row-wise:");
-int R2 = 0;
-while(R2<n_row){
-    int C2 = 0;
-    while(C2<n_col){
-        scanf("%d", &mat2[R2][C2]);
-        C2++;
-    }
-R2++;
-}
-
-printf("First Matrix:\n");
-int R3 = 0;
-while(R3<n_row){
-    int C3 = 0;
-    while(C3<n_col){
-        printf("|%d|", mat1[R3][C3]);
-        C3++;
-    }
-    printf("\n");
-R3++;
-}
-
-printf("Second Matrix:\n");
-int R4 = 0;
-while(R4<n_row){
-    int C4 = 0;
-    while(C4<n_col){
-        printf("|%d|", mat2[R4][C4]);
-        C4++;
-    }
-    printf("\n");
-R4++;
-}
-printf("Addition of two matrices:\n");
-int R5 = 0;
-while(R5<n_row){
-    int C5 = 0;
-    while(C5<n_col){
-        printf("|%d|", mat1[R5][C5] + mat2[R5][C5]);
-        C5++;
-    }
-    printf("\n");
-R5++;
-}
-
-
-/*int sad = 0;
-int R6 = 0;
-
-
-while(R6<n_row){
-    int in_r = 0;
-    int in_c = 0;
-    int C6 = 0;
-    int R6t  = 0;
-
-
-    while(C6<n_col){
-            
-            int C6t = 0;
-
-        sad = mat1[R6t][C6t];
-        in_c = C6t + 1;
-        while(in_c < n_col){
-            if(sad < mat1[R6t][C6t]){
-                C6t++;
-                in_c++;
-            }
-            else{sad = mat1[R6t][C6t];
-                C6t++;
-            in_c++;}
-            }
-            in_r = R6t + 1;
-            while(in_r < n_row){
-            if(sad > mat1[in_r][in_c]){
-                in_r++;
-            }
-            else{break;}
+    
+    printf("Enter Matrix-1 elements:\n");
+    int r = 0;
+    while(r < n_row) {
+        int c = 0;
+        while(c < n_col) {
+            scanf("%d", &mat1[r][c]);
+            c++;
         }
-        
-        C6++ ;
-
+        r++;
     }
-R6++;
-}
 
-//printf("\n %d %d",R6t,  in_c);
-printf("\n Saddle pint is %d", sad);
+    
+    printf("Enter Matrix-2 elements:\n");
+    r = 0;
+    while(r < n_row) {
+        int c = 0;
+        while(c < n_col) {
+            scanf("%d", &mat2[r][c]);
+            c++;
+        }
+        r++;
+    }
 
-*/
+    
+    printf("\nAddition of Matrices:\n");
+    r = 0;
+    while(r < n_row) {
+        int c = 0;
+        while(c < n_col) {
+            printf("%d\t", mat1[r][c] + mat2[r][c]);
+            c++;
+        }
+        printf("\n");
+        r++;
+    }
 
+    
+    int found_saddle = 0;
+    r = 0;
+    while(r < n_row) {
+        int min_row = mat1[r][0], col_ind = 0;
+        int c = 1;
+        while(c < n_col) {
+            if(mat1[r][c] < min_row) {
+                min_row = mat1[r][c];
+                col_ind = c;
+            }
+            c++;
+        }
+        int k = 0, is_saddle = 1;
+        while(k < n_row) {
+            if(mat1[k][col_ind] > min_row) {
+                is_saddle = 0;
+                break;
+            }
+            k++;
+        }
+        if(is_saddle) {
+            printf("\nSaddle Point found: %d at (%d, %d)\n", min_row, r, col_ind);
+            found_saddle = 1;
+        }
+        r++;
+    }
+    if(!found_saddle) printf("\nNo Saddle Point found.\n");
 
+    
+    if(n_row == n_col) {
+        int sum_diag = 0, magic = 1, target_sum = 0;
+        for(int i=0; i<n_row; i++) target_sum += mat1[0][i];
 
+        
+        for(int i=0; i<n_row; i++) {
+            int rs = 0, cs = 0;
+            for(int j=0; j<n_col; j++) {
+                rs += mat1[i][j];
+                cs += mat1[j][i];
+            }
+            if(rs != target_sum || cs != target_sum) magic = 0;
+        }
+        if(magic) printf("Matrix-1 is a Magic Square!\n");
+        else printf("Matrix-1 is NOT a Magic Square.\n");
+    }
 
-return 0;
+   
+    if(n_row == 2 && n_col == 2) {
+        float det = (mat1[0][0] * mat1[1][1]) - (mat1[0][1] * mat1[1][0]);
+        if(det != 0) {
+            printf("\nInverse of Matrix-1:\n");
+            printf("|%.2f  %.2f|\n", mat1[1][1]/det, -mat1[0][1]/det);
+            printf("|%.2f  %.2f|\n", -mat1[1][0]/det, mat1[0][0]/det);
+        } else printf("\nInverse does not exist (Det=0).\n");
+    }
+
+    return 0;
 }
