@@ -68,7 +68,7 @@ case 6:
         div++;
     }
     if(prm){
-        printf("%d", fac1);
+        //printf("%d", fac1);
     }
     break; 
           
@@ -90,7 +90,7 @@ case 6:
         div2++;
     }
     if(prm){
-        printf("%d", fac2);
+        //printf("%d", fac2);
     }
     break; 
           
