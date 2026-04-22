@@ -52,10 +52,19 @@ else{printf("\nThe string is not a palindrome");}
 // Checking for sustring
 printf("\n");
 if(strstr(string1, string2)!= NULL){
-    printf("The substring is present in the main string");
+    printf("The substring is present in the main string\n");
 }
 else{
-    printf("The substring is not present in the main string");
+    printf("The substring is not present in the main string\n");
+}
+
+// Comparing both strings
+int diff = strcmp(string1, string2);
+if(diff == 0){
+    printf("The strings are equal");
+}
+else{
+    printf("The strings are not equal");
 }
     return 0;
 }
